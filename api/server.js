@@ -4,7 +4,7 @@ const faucetService = require('./lib/service.js');
 const app = express();
 app.use(express.json());
 
-const port = 3000;
+const port = 3001;
 const getStatus = () => `Faucet server is running on port ${port}!`;
 
 app.get('/faucet/status', (req, res) => res.json( { status: `${getStatus()}` } ));
@@ -14,7 +14,7 @@ app.post('/faucet/request', function (req, res) {
     faucetService.handleFaucetRequest(req.body.recipient)
       .then((tx) => {
         if(!tx.error) {
-          res.json({ status: "success", hash: tx.hash });
+          res.json({ status: "success", hash: tx.txhash });
         } else {
           res.json({ status: tx.error });
         }

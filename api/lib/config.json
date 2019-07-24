@@ -4,6 +4,6 @@
   "chainId": "regen-test-1001",
   "gasLimit": "200000",
   "txDenom": "tree",
-  "txAmount": "1",
+  "txAmount": "500",
   "feeAmount": "0"
 }

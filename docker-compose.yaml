@@ -1,0 +1,8 @@
+version: '3.5'
+services:
+  faucet-service:
+    image: regen-faucet
+    build: 
+      context: ./api
+    network_mode: host
+    restart: always
